@@ -1,0 +1,55 @@
+{
+    "bg": "https://images4.alphacoders.com/109/1092359.jpg",
+    "title": "Quiz World of Warcraft",
+    "description": "Teste seus conhecimentos sobre a história de Azeroth e o universo Warcraft",
+    "questions": [
+        {
+            "image": "https://pa1.narvii.com/6685/af4ae0ed948a49afe5a8dd3f9db2c0d73be2e4a5_00.gif",
+            "title": "Qual o nome do primeiro Lich King?",
+            "description": "Essa é pra aquecer",
+            "answer": 2,
+            "alternatives": [
+                "Arthas",
+                "*Nerzhul",
+                "Guldan",
+                "Bolvar"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "Como fazer um background gradiente com css?",
+            "description": "Faz tempo em haha",
+            "answer": 0,
+            "alternatives": [
+                "background: linear-gradient(#e66465, #9198e5);",
+                "background: gradient(#e66465, #9198e5);"
+            ]
+        }
+    ],
+    "external": [
+        ""
+    ],
+    "theme": {
+        "colors": {
+            "primary": "#6D0300",
+            "secondary": "#FFC856",
+            "mainBg": "#000000cc",
+            "contrastText": "#FFFFFF",
+            "wrong": "#FF5722",
+            "success": "#4CAF50",
+            "dk": "#C41E3A",
+            "dh": "#A330C9",
+            "druid": "#FF7C0A",
+            "hunter": "#AAD372",
+            "mage": "#3FC7EB",
+            "monk": "#00FF98",
+            "paladin": "#F48CBA",
+            "priest": "#FFFFFF",
+            "rogue": "#FFF468",
+            "shaman": "#0070DD",
+            "warlock": "#8788EE",
+            "warrior": "#C69B6D"
+        },
+        "borderRadius": "4px"
+    }
+}
