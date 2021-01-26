@@ -76,7 +76,7 @@ export default function Home() {
           <Widget.Content>
             <h1>Quizes da Galera</h1>
 
-            <Button.Link href="https://alura-quiz-jhonatan-base.jhonatansouza.vercel.app/">Quiz Sobre React</Button.Link>
+            <Button.Link href="https://tibiaquiz-base.lubrum.vercel.app/">Quiz sobre Tibia</Button.Link>
             <Button.Link href="https://aluraquiz-base-eta.vercel.app/">Quiz Momentos Olímpicos</Button.Link>
             <Button.Link href="https://radioquiz.ajp2511.vercel.app/">Quiz sobre Radiologia</Button.Link>
           </Widget.Content>
