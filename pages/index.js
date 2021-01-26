@@ -6,12 +6,8 @@ import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import IndexPage from '../src/components/IndexPage';
-const BackgroundImage = styled.div`
-   background-image: url(${db.bg});
-   flex: 1;
-   background-size: cover;
-   background-position: center;
- `;
+import Button from '../src/components/Button';
+import { useRouter } from 'next/router';
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -21,10 +17,28 @@ export const QuizContainer = styled.div`
   @media screen and (max-width: 500px) {
     margin: auto;
     padding: 15px;
+    background-position: cover;
   }
+`;
+export const MyTextField = styled.input`
+  width: 100%;
+  display: block;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 4px 16px;
+  min-width: 64px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <IndexPage/>
@@ -35,7 +49,26 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>{db.description}</p>
+            <form onSubmit={function (infosDoEvento) {
+              infosDoEvento.preventDefault();
+              //vish tomei spoiler
+              //router.push(`/quiz?name=${name}`);
+              console.log('Fazendo uma submissão por meio do react');
+            }}
+            >
+              <MyTextField type='text'
+                onChange={function (infosDoEvento) {
+                  console.log(infosDoEvento.target.value);
+                  // State
+                  // name = infosDoEvento.target.value;
+                  setName(infosDoEvento.target.value);
+                }}
+                placeholder="Diz ai seu nome"
+              />
+              <Button type="submit" disabled={name.length === 0}>
+                Jogar
+              </Button>
+            </form>
           </Widget.Content>
         </Widget>
 
@@ -43,7 +76,9 @@ export default function Home() {
           <Widget.Content>
             <h1>Quizes da Galera</h1>
 
-            <p>lorem ipsum dolor sit amet...</p>
+            <Button.Link href="https://alura-quiz-jhonatan-base.jhonatansouza.vercel.app/">Quiz Sobre React</Button.Link>
+            <Button.Link href="https://aluraquiz-base-eta.vercel.app/">Quiz Momentos Olimpicos</Button.Link>
+            <Button.Link href="https://radioquiz.ajp2511.vercel.app/">Quiz sobre Radiologia</Button.Link>
           </Widget.Content>
         </Widget>
         <Footer />

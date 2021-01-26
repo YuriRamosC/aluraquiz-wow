@@ -1,0 +1,49 @@
+import styled from 'styled-components';
+import db from '../../../db.json';
+const Button = styled.button`
+  width: 100%;
+  display: block;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 4px 16px;
+  min-width: 64px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration:none; 
+  line-height: 1.75;
+  font-weight: bolder;
+  background: url(${db.bg3}) repeat-x 0 0;
+  color: ${({ theme }) => theme.colors.secondary};
+  * {
+    margin: 0;
+  }
+`;
+
+Button.Link = styled.a`
+  width: 100%;
+  display: block;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 4px 16px;
+  min-width: 64px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration:none; 
+  line-height: 1.75;
+  font-weight: bolder;
+  background: url(${db.bg3}) repeat-x 0 0;
+  color: ${({ theme }) => theme.colors.secondary};
+  * {
+    margin: 0;
+  }
+`;
+
+export default Button;

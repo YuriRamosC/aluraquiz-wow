@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import db from '../../../db.json'
 const Widget = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => {
-    return theme.colors.mainBg;
-  }};
+  background-image: url(${db.bg2});
+  background-color: #444;
+  background-position: 50%;
   border-radius: 4px;
   overflow: hidden;
   h1, h2, h3 {
@@ -22,22 +23,23 @@ const Widget = styled.div`
 `;
 
 Widget.Header = styled.header`
-  display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 18px 32px;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background: linear-gradient(180deg,#261812 0,#1a0f0b);
+  border-bottom: 1px solid #352011;
   color: ${({ theme }) => theme.colors.secondary};
   * {
     margin: 0;
   }
+  text-align: center;
 `;
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
   &:hover,
     &:focus {
-      opacity: .5;
+      opacity: .9;
     }
   & > *:first-child {
     margin-top: 0;
