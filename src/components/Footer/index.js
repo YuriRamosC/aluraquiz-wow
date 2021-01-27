@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-
+import styled from 'styled-components';
+import React from 'react';
 // src/components/Footer/index.js
 const FooterWrapper = styled.footer`
   background-color: #00000070;
