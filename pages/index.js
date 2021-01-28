@@ -8,19 +8,8 @@ import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import Button from '../src/components/Button';
-import MyTextField from '../src/components/MyTextField';
-
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-    background-position: cover;
-  }
-`;
+import Input from '../src/components/Input';
+import QuizContainer from '../src/components/QuizContainer';
 
 export default function Home() {
   const router = useRouter();
@@ -37,18 +26,14 @@ export default function Home() {
           <Widget.Content>
             <form onSubmit={function (event) {
               event.preventDefault();
-              console.log('Fazendo uma submissão por meio do react');
-              //router
               router.push(`/quiz?name=${name}`);
             }}
             >
-              <MyTextField
-                type="text"
-                onChange={function (event) {
-                  console.log(event.target.value);
-                  setName(event.target.value);
-                }}
-                placeholder="Diz ai seu nome"
+              <Input
+              name='userName'
+              onChange={(event)=>  setName(event.target.value) }
+              placeholder="Diz ai seu nome"
+              value={name}
               />
               <Button type="submit" disabled={name.length === 0}>
                 Jogar {name}
@@ -71,3 +56,20 @@ export default function Home() {
     </QuizBackground>
   );
 }
+/*export async function getStaticProps() {
+  try {
+    const retornoDaApi = await fetch('https://api.github.com/users/YuriRamosC')
+      .then((respostaDoServer) => {
+        return respostaDoServer.json();
+      });
+
+    return {
+      props: {
+        dadosViaStaticProps: "dado simples via static props",
+        dadosDoGitHub: retornoDaApi
+      }
+    }
+  } catch(err) {
+    throw new Error('Failed');
+  }
+}*/

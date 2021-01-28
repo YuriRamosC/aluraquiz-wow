@@ -38,6 +38,7 @@ Widget.Header = styled.header`
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
+  text-align: center;
   &:hover,
     &:focus {
       opacity: .9;
@@ -53,5 +54,29 @@ Widget.Content = styled.div`
     padding: 0;
   }
 `;
-
+Widget.Topic = styled.a`
+  width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 10px 16px;
+  min-width: 64px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+  user-select: none;
+  font-weight: bolder;
+  line-height: normal;
+  transition: all .25s cubic-bezier(.23,1,.32,1) 0s;
+  background: linear-gradient(180deg,rgba(1,1,2,.97),rgba(21,13,6,.97));
+  border: 1px solid #352011;
+  color: ${({ theme }) => theme.colors.secondary};
+  outline: none;
+  box-sizing: border-box;
+`;
 export default Widget;

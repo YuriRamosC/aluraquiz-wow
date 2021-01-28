@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import db from '../../../db.json';
 
-const Button = styled.button`
+const ButtonBase = styled.button`
   width: 100%;
   display: block;
   justify-content: flex-start;
@@ -22,6 +22,10 @@ const Button = styled.button`
     color: ${({ theme }) => theme.colors.contrastText};
    background: linear-gradient(180deg,rgba(1,1,2,.7),rgba(21,13,6,.9)), url(${db.bg3});
 }
+  &:focus {
+    box-shadow: inset 0 0 0 1000px rgba(11,156,49,0.4);
+    }
+
   color: ${({ theme }) => theme.colors.secondary};
   * {
     margin: 0;
@@ -51,4 +55,9 @@ Button.Link = styled.a`
   }
 `;
 
-export default Button;
+export default function Button({...props}) {
+  return (
+    <ButtonBase {...props}/>
+  )
+}
+

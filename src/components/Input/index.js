@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import db from '../../../db.json';
+import Button from '../Button';
+import PropTypes from 'prop-types';
 
-const MyTextField = styled.input`
+const InputBase = styled.input`
   width: 100%;
   display: block;
   justify-content: flex-start;
@@ -25,4 +27,14 @@ const MyTextField = styled.input`
   box-sizing: border-box;
 `;
 
-export default MyTextField;
+export default function Input({onChange, placeholder, ...props }) {
+  return (
+      <InputBase onChange={onChange} placeholder={placeholder}  {...props}/>
+  )
+}
+Input.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired
+}

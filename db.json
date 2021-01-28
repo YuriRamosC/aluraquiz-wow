@@ -10,22 +10,38 @@
             "image": "https://pa1.narvii.com/6685/af4ae0ed948a49afe5a8dd3f9db2c0d73be2e4a5_00.gif",
             "title": "Qual o nome do primeiro Lich King?",
             "description": "Essa é pra aquecer",
-            "answer": 2,
+            "questionTheme":"dk",
+            "answer": 1,
             "alternatives": [
                 "Arthas",
-                "*Nerzhul",
+                "Nerzhul",
                 "Guldan",
                 "Bolvar"
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-            "title": "Como fazer um background gradiente com css?",
-            "description": "Faz tempo em haha",
-            "answer": 0,
+            "image": "https://o.aolcdn.com/images/dims?resize=1200%2C630&crop=1200%2C630%2C0%2C0&quality=95&image_uri=https%3A%2F%2Fs.yimg.com%2Fuu%2Fapi%2Fres%2F1.2%2F9Y3L1ZjOx8yAP3yWPc3Zxw--%7EB%2FaD0zNDA7dz00MjU7YXBwaWQ9eXRhY2h5b24-%2Fhttps%3A%2F%2Fwww.blogcdn.com%2Fwow.joystiq.com%2Fmedia%2F2007%2F03%2Finsiderkaelkyl.jpg&client=amp-blogside-v2&signature=cc15f5101597d36686ce4f2d9d591f254dfa6544",
+            "title": "Qual o nome da espada da família de Kaelthas?",
+            "description": "Kaelthas, o principe dos Sindorei",
+            "questionTheme":"mage",
+            "answer": 2,
             "alternatives": [
-                "background: linear-gradient(#e66465, #9198e5);",
-                "background: gradient(#e66465, #9198e5);"
+                "Frostmourne",
+                "Doomhammer",
+                "Felo'melorn",
+                "Thunderfury Blessed Blade of the Windseeker"
+            ]
+        },
+        {
+            "image": "https://wow.zamimg.com/uploads/screenshots/normal/80504-lordaeron-throne-room.jpg",
+            "title": "Qual o nome do ultimo rei vivo de Lordaeron?",
+            "questionTheme":"paladin",
+            "answer": 1,
+            "alternatives": [
+                "Arthas Menethil",
+                "Terenas Menethil II",
+                "Bolvar Fordragon",
+                "Varian Wrynn"
             ]
         }
     ],
