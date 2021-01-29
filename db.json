@@ -130,11 +130,12 @@
     "external": [
         "https://covidquiz.felipevalerio.vercel.app",
         "https://tibiaquiz-base.lubrum.vercel.app/",
-        "https://radioquiz.ajp2511.vercel.app/"
+        "https://radioquiz.ajp2511.vercel.app/",
+        "https://aluraquiz-css.omariosouto.vercel.app/api/db"
     ],
     "theme": {
         "colors": {
-            "primary": "#3C3C3C",
+            "primary": "#C41E3A",
             "secondary": "#f8b700",
             "myred": "#6D0300",
             "mainBg": "#3C3C3C",

@@ -10,6 +10,7 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import Button from '../src/components/Button';
 import Input from '../src/components/Input';
 import QuizContainer from '../src/components/QuizContainer';
+import Link from '../src/components/Link';
 
 export default function Home() {
   const router = useRouter();
@@ -47,22 +48,15 @@ export default function Home() {
             <h1>Quizes da Galera</h1>
             <ul>
               {db.external.map((linkExterno) => {
-                const [projectName, githubUser] = linkExterno
-                .replace(/\//g, '')
-                .replace('https:', '')
-                .replace('.vercel.app', '')
-                .split('.');
+                const [projectName, githubUser] = new URL(linkExterno).host.split(".");
 
                 return (
                   <li key={linkExterno}>
-                    <Button.Link href={linkExterno}>{`Quiz: ${projectName} (${githubUser})`}</Button.Link>
+                    <Button.Link as={Link} href={`/quiz/${projectName}___${githubUser}`}>{`Quiz: ${projectName} (${githubUser})`}</Button.Link>
                   </li>
                 );
               })}
             </ul>
-            {/*<Button.Link href="https://covidquiz.felipevalerio.vercel.app/">Quiz Covid</Button.Link>
-            <Button.Link href="https://tibiaquiz-base.lubrum.vercel.app/">Quiz sobre Tibia</Button.Link>
-          <Button.Link href="https://radioquiz.ajp2511.vercel.app/">Quiz sobre Radiologia</Button.Link>*/}
           </Widget.Content>
         </Widget>
         <Footer />
@@ -71,20 +65,3 @@ export default function Home() {
     </QuizBackground>
   );
 }
-/*export async function getStaticProps() {
-  try {
-    const retornoDaApi = await fetch('https://api.github.com/users/YuriRamosC')
-      .then((respostaDoServer) => {
-        return respostaDoServer.json();
-      });
-
-    return {
-      props: {
-        dadosViaStaticProps: "dado simples via static props",
-        dadosDoGitHub: retornoDaApi
-      }
-    }
-  } catch(err) {
-    throw new Error('Failed');
-  }
-}*/

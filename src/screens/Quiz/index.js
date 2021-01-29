@@ -2,15 +2,17 @@ import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import db from '../../db.json';
-import Widget from '../../src/components/Widget';
-import QuizLogo from '../../src/components/QuizLogo';
-import QuizBackground from '../../src/components/QuizBackground';
-import Footer from '../../src/components/Footer';
-import GitHubCorner from '../../src/components/GitHubCorner';
-import Button from '../../src/components/Button';
-import AlternativesForm from '../../src/components/AlternativesForm'
-import QuizContainer from '../../src/components/QuizContainer';
+import db from '../../../db.json';
+import Widget from '../../components/Widget';
+import QuizLogo from '../../components/QuizLogo';
+import QuizBackground from '../../components/QuizBackground';
+import Footer from '../../components/Footer';
+import GitHubCorner from '../../components/GitHubCorner';
+import Button from '../../components/Button';
+import AlternativesForm from '../../components/AlternativesForm'
+import QuizContainer from '../../components/QuizContainer';
+import BackLinkArrow from '../../components/BackLinkArrow';
+import Link from '../../components/Link';
 
 
 const screenStates = {
@@ -19,7 +21,7 @@ const screenStates = {
   RESULT: 'RESULT'
 }
 
-export default function Quiz() {
+export default function Quiz({externalQuestions, externalBg }) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const router = useRouter();
   const [pontos, setPontos] = React.useState(0);
@@ -27,11 +29,13 @@ export default function Quiz() {
   const [results, setResults] = React.useState([]);
   const num = 0;
   const [name, setName] = React.useState(received.name);
-  const totalQuestions = db.questions.length;
+  const totalQuestions = externalQuestions.length;
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
-  const question = db.questions[questionIndex];
+  const question = externalQuestions[questionIndex];
+  const bg = externalBg;
   const StyledCircularProgress = styled(CircularProgress)`
+
   && {
     &.MuiCircularProgress-colorPrimary {
       color: ${db.theme.colors.secondary};
@@ -56,7 +60,7 @@ export default function Quiz() {
   }
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={bg}>
       <QuizContainer>
         <QuizLogo />
         {screenState === screenStates.QUIZ && (
@@ -82,6 +86,7 @@ function ResultWidget({ results, name }) {
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href='/'/>
         {`${name}, você acertou ${results.filter((x) => x).length} de ${results.length} questões`}
       </Widget.Header>
       <Widget.Content>
@@ -93,10 +98,7 @@ function ResultWidget({ results, name }) {
           ))}
         </ul>
 
-        <Button.Link href='/'>Voltar ao Início</Button.Link>
-        <Button.Link href="https://covidquiz.felipevalerio.vercel.app/">Quiz Covid</Button.Link>
-        <Button.Link href="https://tibiaquiz-base.lubrum.vercel.app/">Quiz sobre Tibia</Button.Link>
-        <Button.Link href="https://radioquiz.ajp2511.vercel.app/">Quiz sobre Radiologia</Button.Link>
+        <Button.Link as={Link} href='/'>Voltar ao Início</Button.Link>
       </Widget.Content>
     </Widget>
   )
@@ -108,6 +110,7 @@ function LoadingWidget({StyledCircularProgress}) {
       <Widget.Header>
         Carregando...
       </Widget.Header>
+
       <Widget.Content>
         <StyledCircularProgress color='primary' />
       </Widget.Content>
@@ -124,6 +127,7 @@ function QuestionWidget({ question, totalQuestions, questionIndex, onSubmit, add
   return (
     <Widget>
       <Widget.Header>
+      <BackLinkArrow href="/" />
         <h1>{db.title}</h1>
         <h3>{`Pergunta ${questionIndex + 1} de  ${totalQuestions} `}</h3>
       </Widget.Header>
