@@ -128,7 +128,9 @@
         }
     ],
     "external": [
-        ""
+        "https://covidquiz.felipevalerio.vercel.app",
+        "https://tibiaquiz-base.lubrum.vercel.app/",
+        "https://radioquiz.ajp2511.vercel.app/"
     ],
     "theme": {
         "colors": {

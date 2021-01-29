@@ -30,10 +30,10 @@ export default function Home() {
             }}
             >
               <Input
-              name='userName'
-              onChange={(event)=>  setName(event.target.value) }
-              placeholder="Diz ai seu nome"
-              value={name}
+                name='userName'
+                onChange={(event) => setName(event.target.value)}
+                placeholder="Diz ai seu nome"
+                value={name}
               />
               <Button type="submit" disabled={name.length === 0}>
                 Jogar {name}
@@ -45,9 +45,24 @@ export default function Home() {
         <Widget>
           <Widget.Content>
             <h1>Quizes da Galera</h1>
-            <Button.Link href="https://covidquiz.felipevalerio.vercel.app/">Quiz Covid</Button.Link>
+            <ul>
+              {db.external.map((linkExterno) => {
+                const [projectName, githubUser] = linkExterno
+                .replace(/\//g, '')
+                .replace('https:', '')
+                .replace('.vercel.app', '')
+                .split('.');
+
+                return (
+                  <li key={linkExterno}>
+                    <Button.Link href={linkExterno}>{`Quiz: ${projectName} (${githubUser})`}</Button.Link>
+                  </li>
+                );
+              })}
+            </ul>
+            {/*<Button.Link href="https://covidquiz.felipevalerio.vercel.app/">Quiz Covid</Button.Link>
             <Button.Link href="https://tibiaquiz-base.lubrum.vercel.app/">Quiz sobre Tibia</Button.Link>
-            <Button.Link href="https://radioquiz.ajp2511.vercel.app/">Quiz sobre Radiologia</Button.Link>
+          <Button.Link href="https://radioquiz.ajp2511.vercel.app/">Quiz sobre Radiologia</Button.Link>*/}
           </Widget.Content>
         </Widget>
         <Footer />

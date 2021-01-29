@@ -2,15 +2,15 @@ import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import db from '../db.json';
-import Widget from '../src/components/Widget';
-import QuizLogo from '../src/components/QuizLogo';
-import QuizBackground from '../src/components/QuizBackground';
-import Footer from '../src/components/Footer';
-import GitHubCorner from '../src/components/GitHubCorner';
-import Button from '../src/components/Button';
-import AlternativesForm from '../src/components/AlternativesForm'
-import QuizContainer from '../src/components/QuizContainer';
+import db from '../../db.json';
+import Widget from '../../src/components/Widget';
+import QuizLogo from '../../src/components/QuizLogo';
+import QuizBackground from '../../src/components/QuizBackground';
+import Footer from '../../src/components/Footer';
+import GitHubCorner from '../../src/components/GitHubCorner';
+import Button from '../../src/components/Button';
+import AlternativesForm from '../../src/components/AlternativesForm'
+import QuizContainer from '../../src/components/QuizContainer';
 
 
 const screenStates = {
@@ -18,6 +18,7 @@ const screenStates = {
   LOADING: 'LOADING',
   RESULT: 'RESULT'
 }
+
 export default function Quiz() {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const router = useRouter();
@@ -30,7 +31,12 @@ export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
-
+  const StyledCircularProgress = styled(CircularProgress)`
+  && {
+    &.MuiCircularProgress-colorPrimary {
+      color: ${db.theme.colors.secondary};
+    }
+  }`;
   function addResult(result) {
     setResults([...results, result]);
   }
@@ -62,7 +68,7 @@ export default function Quiz() {
             addResult={addResult}
           />
         )}
-        {screenState === screenStates.LOADING && <LoadingWidget />}
+        {screenState === screenStates.LOADING && <LoadingWidget StyledCircularProgress={StyledCircularProgress}/>}
 
         {screenState === screenStates.RESULT && <ResultWidget results={results} name={name} />}
         <Footer />
@@ -95,7 +101,8 @@ function ResultWidget({ results, name }) {
     </Widget>
   )
 }
-function LoadingWidget() {
+
+function LoadingWidget({StyledCircularProgress}) {
   return (
     <Widget>
       <Widget.Header>
@@ -103,7 +110,7 @@ function LoadingWidget() {
       </Widget.Header>
 
       <Widget.Content>
-        <CircularProgress color='palette.warning' />
+        <StyledCircularProgress color='primary' />
       </Widget.Content>
     </Widget>
   );

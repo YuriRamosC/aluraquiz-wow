@@ -6,3 +6,12 @@ export default function QuizDaGaleraPage() {
         </div>
     )
 }
+
+export async function getServerSideProps(context) {
+    console.log(context.query.id);
+    return {
+      props: {
+
+      }, // will be passed to the page component as props
+    }
+  }
