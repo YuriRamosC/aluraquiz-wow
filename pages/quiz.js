@@ -1,4 +1,5 @@
 import React from 'react';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import db from '../db.json';
@@ -37,7 +38,7 @@ export default function Quiz() {
   React.useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
+    }, 2 * 1000);
   }, []);
 
   function handleSubmitQuiz() {
@@ -63,7 +64,7 @@ export default function Quiz() {
         )}
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
-        {screenState === screenStates.RESULT && <ResultWidget results={results} name={name}/>}
+        {screenState === screenStates.RESULT && <ResultWidget results={results} name={name} />}
         <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/YuriRamosC" />
@@ -102,7 +103,7 @@ function LoadingWidget() {
       </Widget.Header>
 
       <Widget.Content>
-        [Desafio do Loading]
+        <CircularProgress color='palette.warning' />
       </Widget.Content>
     </Widget>
   );
