@@ -2,15 +2,14 @@
     "bg": "https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/xy/XYS50B0L4QWX1602545433927.jpg",
     "wowIcon": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/1200px-WoW_icon.svg.png",
     "title": "Quiz World of Warcraft",
-    "bg2":"https://assets.worldofwarcraft.com/static/components/Box/Box-leather-grey-dark.0477a49460ddf3f97294112a1b372a06.jpg",
-    "bg3":"https://assets.worldofwarcraft.com/static/components/SiteNav/sitenav-bar-user-bg.a5aceeed07718f696e26dc7b9c75f188.jpg",
+    "bg2": "https://assets.worldofwarcraft.com/static/components/Box/Box-leather-grey-dark.0477a49460ddf3f97294112a1b372a06.jpg",
+    "bg3": "https://assets.worldofwarcraft.com/static/components/SiteNav/sitenav-bar-user-bg.a5aceeed07718f696e26dc7b9c75f188.jpg",
     "description": "Teste seus conhecimentos sobre a história de Azeroth e o universo Warcraft",
     "questions": [
         {
             "image": "https://pa1.narvii.com/6685/af4ae0ed948a49afe5a8dd3f9db2c0d73be2e4a5_00.gif",
             "title": "Qual o nome do primeiro Lich King?",
-            "description": "Essa é pra aquecer",
-            "questionTheme":"dk",
+            "questionTheme": "dk",
             "answer": 1,
             "alternatives": [
                 "Arthas",
@@ -22,8 +21,7 @@
         {
             "image": "https://o.aolcdn.com/images/dims?resize=1200%2C630&crop=1200%2C630%2C0%2C0&quality=95&image_uri=https%3A%2F%2Fs.yimg.com%2Fuu%2Fapi%2Fres%2F1.2%2F9Y3L1ZjOx8yAP3yWPc3Zxw--%7EB%2FaD0zNDA7dz00MjU7YXBwaWQ9eXRhY2h5b24-%2Fhttps%3A%2F%2Fwww.blogcdn.com%2Fwow.joystiq.com%2Fmedia%2F2007%2F03%2Finsiderkaelkyl.jpg&client=amp-blogside-v2&signature=cc15f5101597d36686ce4f2d9d591f254dfa6544",
             "title": "Qual o nome da espada da família de Kaelthas?",
-            "description": "Kaelthas, o principe dos Sindorei",
-            "questionTheme":"mage",
+            "questionTheme": "mage",
             "answer": 2,
             "alternatives": [
                 "Frostmourne",
@@ -35,7 +33,7 @@
         {
             "image": "https://wow.zamimg.com/uploads/screenshots/normal/80504-lordaeron-throne-room.jpg",
             "title": "Qual o nome do ultimo rei vivo de Lordaeron?",
-            "questionTheme":"paladin",
+            "questionTheme": "paladin",
             "answer": 1,
             "alternatives": [
                 "Arthas Menethil",
@@ -45,15 +43,87 @@
             ]
         },
         {
-            "image":"https://els-jbs-prod-cdn.jbs.elsevierhealth.com/cms/attachment/3278014a-e06c-46df-8d31-05700ef3a62a/gr1_lrg.jpg",
-            "title":"Qual o nome do Boss responsável pela grande pandemia virtual do World of Warcraft?",
-            "questionTheme":"hunter",
+            "image": "https://els-jbs-prod-cdn.jbs.elsevierhealth.com/cms/attachment/3278014a-e06c-46df-8d31-05700ef3a62a/gr1_lrg.jpg",
+            "title": "Qual o nome do Boss responsável pela grande pandemia virtual do World of Warcraft?",
+            "questionTheme": "hunter",
             "answer": 3,
             "alternatives": [
                 "Kel'thuzad",
                 "Mannoroth",
                 "Varimathras",
                 "Hakkar"
+            ]
+        },
+        {
+            "image": "https://i.pinimg.com/originals/6b/f8/2b/6bf82b964eb6adff94d633137afd6480.jpg",
+            "title": "Quem eram os personagens principais que lutaram contra Arthas, junto a Illidan no final de Warcraft 3?",
+            "questionTheme": "hunter",
+            "answer": 3,
+            "alternatives": [
+                "Kel'thuzad e Kael'thas",
+                "Sylvanas e Kael'thas",
+                "Lady Vashj e Sylvanas",
+                "Lady Vashj e Kael'thas"
+            ]
+        },
+        {
+            "image": "https://o.aolcdn.com/images/dims?resize=1200%2C630&crop=1200%2C630%2C0%2C0&quality=95&image_uri=https%3A%2F%2Fs.yimg.com%2Fuu%2Fapi%2Fres%2F1.2%2FlMnlmK_HCnuhWC33y_wwAw--%7EB%2FaD0yNjA7dz01ODA7YXBwaWQ9eXRhY2h5b24-%2Fhttps%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fadam%2Febd0fd00894e6eb21f906c0fab13385a%2Fwar_crimes_cover_detail_580.jpg&client=amp-blogside-v2&signature=49b95018a24e8f73896619398900374488e82fd5",
+            "title": "Quem desses é um dos responsaveis pela fulga de Garrosh entre Mists of Pandaria e Warlords of Draenor?",
+            "questionTheme": "hunter",
+            "answer": 0,
+            "alternatives": [
+                "Wrathion",
+                "Sylvanas",
+                "Asa da Morte",
+                "Orgrim Doomhammer"
+            ]
+        },
+        {
+            "image": "https://mmo-gs.com/wp-content/uploads/2019/07/08cac355acfa20128aa927b72dcf74b35367179f.jpg",
+            "title": "Qual desses é referenciado pelos Shamans como quinto elemento?",
+            "questionTheme": "hunter",
+            "answer": 1,
+            "alternatives": [
+                "Luz",
+                "Espírito",
+                "Raios",
+                "Mana"
+            ]
+        },
+        {
+            "image": "https://wow.zamimg.com/uploads/blog/images/12256-next-wow-expansion-speculation-the-black-empire-and-old-gods.png",
+            "title": "Qual desses NÃO é o nome de um Old God do universo Warcraft?",
+            "questionTheme": "hunter",
+            "answer": 0,
+            "alternatives": [
+                "Yogg'Shothoth",
+                "N'zoth",
+                "C'thun",
+                "Yogg'Saron"
+            ]
+        },
+        {
+            "image": "https://wow.zamimg.com/uploads/screenshots/normal/569962-mardum-o-abismo-partido.jpg",
+            "title": "Durante a campanha de Caçador de Demonios, qual mundo da Legião é conquistado por eles?",
+            "questionTheme": "dh",
+            "answer": 2,
+            "alternatives": [
+                "Argus",
+                "Terralém(Outland)",
+                "Mardum",
+                "Draenor"
+            ]
+        },
+        {
+            "image": "https://i.ytimg.com/vi/FfR4BRCBy8I/maxresdefault.jpg",
+            "title": "Qual artefato Illidan recuperou do corpo de Gul'dan para adquirir mais poder?",
+            "questionTheme": "dh",
+            "answer": 3,
+            "alternatives": [
+                "Seu cajado",
+                "Um dente",
+                "Seu olho",
+                "Seu crânio"
             ]
         }
     ],
@@ -64,7 +134,7 @@
         "colors": {
             "primary": "#3C3C3C",
             "secondary": "#f8b700",
-            "myred":"#6D0300",
+            "myred": "#6D0300",
             "mainBg": "#3C3C3C",
             "contrastText": "#FFFFFF",
             "wrong": "#FF5722",
