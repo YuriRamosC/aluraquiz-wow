@@ -23,7 +23,7 @@ const ButtonBase = styled.button`
    background: linear-gradient(180deg,rgba(1,1,2,.7),rgba(21,13,6,.9)), url(${db.bg3});
 }
   &:focus {
-    box-shadow: inset 0 0 0 1000px rgba(11,156,49,0.4);
+    box-shadow: inset 0 0 0 1000px rgba(11,156,49,0.2);
     }
 
   color: ${({ theme }) => theme.colors.secondary};
