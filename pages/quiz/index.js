@@ -3,6 +3,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import db from '../../db.json';
+import { motion } from 'framer-motion';
 import Widget from '../../src/components/Widget';
 import QuizLogo from '../../src/components/QuizLogo';
 import QuizBackground from '../../src/components/QuizBackground';
@@ -11,7 +12,7 @@ import GitHubCorner from '../../src/components/GitHubCorner';
 import Button from '../../src/components/Button';
 import AlternativesForm from '../../src/components/AlternativesForm'
 import QuizContainer from '../../src/components/QuizContainer';
-
+import BackLinkArrow from '../../src/components/BackLinkArrow';
 
 const screenStates = {
   QUIZ: 'QUIZ',
@@ -19,7 +20,11 @@ const screenStates = {
   RESULT: 'RESULT'
 }
 
-export default function Quiz() {
+export default function Quiz({externalQuestions, externalBg }) {
+  if(externalQuestions && externalBg) {
+    db.questions = externalQuestions;
+    db.bg = externalBg;
+  }
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const router = useRouter();
   const [pontos, setPontos] = React.useState(0);
@@ -68,7 +73,7 @@ export default function Quiz() {
             addResult={addResult}
           />
         )}
-        {screenState === screenStates.LOADING && <LoadingWidget StyledCircularProgress={StyledCircularProgress}/>}
+        {screenState === screenStates.LOADING && <LoadingWidget StyledCircularProgress={StyledCircularProgress} />}
 
         {screenState === screenStates.RESULT && <ResultWidget results={results} name={name} />}
         <Footer />
@@ -93,16 +98,13 @@ function ResultWidget({ results, name }) {
           ))}
         </ul>
 
-        <Button.Link href='/'>Voltar ao Início</Button.Link>
-        <Button.Link href="https://covidquiz.felipevalerio.vercel.app/">Quiz Covid</Button.Link>
-        <Button.Link href="https://tibiaquiz-base.lubrum.vercel.app/">Quiz sobre Tibia</Button.Link>
-        <Button.Link href="https://radioquiz.ajp2511.vercel.app/">Quiz sobre Radiologia</Button.Link>
+        <Button.Link href='/'>Voltar ao Quiz de Warcraft</Button.Link>
       </Widget.Content>
     </Widget>
   )
 }
 
-function LoadingWidget({StyledCircularProgress}) {
+function LoadingWidget({ StyledCircularProgress }) {
   return (
     <Widget>
       <Widget.Header>
@@ -122,10 +124,18 @@ function QuestionWidget({ question, totalQuestions, questionIndex, onSubmit, add
   const hasAlternativeSelected = selectedAlternative !== undefined;
 
   return (
-    <Widget>
+    <Widget
+      as={motion.section}
+      transition={{ delay: 0, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1, y: '0' },
+        hidden: { opacity: 0, y: '100%' }
+      }}
+      initial='hidden'
+      animate='show'
+    >
       <Widget.Header>
-        <h1>{db.title}</h1>
-        <h3>{`Pergunta ${questionIndex + 1} de  ${totalQuestions} `}</h3>
+        <p>{<BackLinkArrow href="/" />}{`Pergunta ${questionIndex + 1} de  ${totalQuestions} `}</p>
       </Widget.Header>
       <img
         alt="Descrição"
@@ -184,8 +194,6 @@ function QuestionWidget({ question, totalQuestions, questionIndex, onSubmit, add
             Confirmar
       </Button>
         </Widget.Content>
-        {/*isQuestionSubmited && isCorrect && <p>Você acertou!</p>*/}
-        {/*isQuestionSubmited && !isCorrect && <p>Você errou!</p>*/}
       </AlternativesForm>
     </Widget>
   )
