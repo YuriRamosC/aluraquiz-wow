@@ -49,6 +49,10 @@ Button.Link = styled.a`
   line-height: 1.75;
   font-weight: bolder;
   background: url(${db.bg3}) repeat-x 0 0;
+  &:disabled {
+    color: ${({ theme }) => theme.colors.contrastText};
+   background: linear-gradient(180deg,rgba(1,1,2,.7),rgba(21,13,6,.9)), url(${db.bg3});
+}
   color: ${({ theme }) => theme.colors.secondary};
   * {
     margin: 0;

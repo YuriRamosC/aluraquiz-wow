@@ -71,7 +71,7 @@ export default function Home() {
 
                 return (
                   <li key={linkExterno}>
-                    <Button.Link as={Link} href={`/quiz/${projectName}___${githubUser}`}>{`Quiz: ${projectName} (${githubUser})`}</Button.Link>
+                    <Button.Link as={Link} href={`/quiz/${projectName}___${githubUser}?name=${name}`}>{`Quiz: ${projectName} (${githubUser})`}</Button.Link>
                   </li>
                 );
               })}
